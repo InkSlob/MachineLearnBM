@@ -9,14 +9,18 @@ ShelfLife = pickle.load(fShelfLife)
 if(len(ShelfLife) == 15000):
     print "ShelfLife pickle file has loaded with proper size of 15,000.  Size = ", len(ShelfLife), "\n"
 
-Shelf_Life_8_80 = []
-for i in ShelfLife:
-    if (i <= 8):
-        Shelf_Life_8_80[i] = 1
-    elif (i >= 80):
-        Shelf_Life_8_80[i] = 2
+cnt = 0
+Shelf_Life_8_80=[]
+for i in range(0, len(ShelfLife)-1):
+    tmp = ShelfLife[i]
+    print "cnt: ", i
+    if (tmp <= 8):
+        Shelf_Life_8_80.append(1)
+    elif (tmp >= 80):
+        Shelf_Life_8_80.append(2)
     else:
-        Shelf_Life_8_80[i] = 0
+        Shelf_Life_8_80.append(0)
+
         
         
 for x in range(1, 25):
